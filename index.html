@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculo Numérico</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<body>
-    <div style="position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);">
-        <div class="botoes-lineares">
-            <label>Sistemas Lineares</label>
-            <br>
-            <button>Gauss-LU</button>
-            <button>Jacobi</button>
-            <button>Gauss-Seidel</button>
-        </div>
-        <br>
-        <div class="botoes-interpolacao">
-            <label>Interpolação Polinomial</label>
-            <br>
-            <button>Newton</button>
-            <button>Lagrange</button>
-        </div>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="center-div" id="div-botoes">
+      <div class="botoes-lineares">
+        <h3>Sistemas Lineares</h3>
+        <br />
+        <button class="btn btn-primary" onclick="selecionaFuncao(1)">Gauss-LU</button>
+        <button class="btn btn-primary">Jacobi</button>
+        <button class="btn btn-primary">Gauss-Seidel</button>
+      </div>
+      <br />
+      <div class="botoes-interpolacao">
+        <h3>Interpolação Polinomial</h3>
+        <br />
+        <button class="btn btn-primary">Newton</button>
+        <button class="btn btn-primary">Lagrange</button>
+      </div>
     </div>
 
-    <div class="gauss-lu"></div>
-    <div class="jacobi"></div>
-    <div class="gauss-seidel"></div>
-    <div class="lagrange"></div>
-    <div class="newton"></div>
-</body>
+    <div class="center-div">
+      <div class="gauss-lu" hidden>
+          <span>Selecione a dimensão da matriz: </span><br>
+          <input type="number"></input>
+          <br><br>
+          <button class="btn btn-primary">Gerar Matriz</button>
+        </div>
+      <div class="jacobi"></div>
+      <div class="gauss-seidel"></div>
+      <div class="lagrange"></div>
+      <div class="newton"></div>
+    </div>
+  </body>
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="index.js"></script>
