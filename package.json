@@ -1,0 +1,19 @@
+{
+  "name": "calculonumericofinal",
+  "version": "1.0.0",
+  "description": "Calculo Numerico",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsilvamartin/CalculoNumericoFinal.git"
+  },
+  "author": "Guilherme Martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsilvamartin/CalculoNumericoFinal/issues"
+  },
+  "homepage": "https://github.com/gsilvamartin/CalculoNumericoFinal#readme"
+}
