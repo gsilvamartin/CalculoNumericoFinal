@@ -33,14 +33,12 @@
 
     <div class="center-div">
       <div class="gauss-lu" hidden>
-          <span>Selecione a dimensão da matriz: </span><br>
-          <input type="number"></input>
+          <span>Selecione a dimensão da matriz: </span><br><br>
+          <input type="number" id="gauss-dimension"></input>
           <br><br>
-          <button class="btn btn-primary">Gerar Matriz</button>
-
-          <div class="gauss-table" id="gauss-table">
-
-          </div>
+          <button class="btn btn-primary" onclick="gerarMatriz()">Gerar Matriz</button>
+          <br>
+          <div class="gauss-table" id="gauss-table"></div>
         </div>
       <div class="jacobi"></div>
       <div class="gauss-seidel"></div>

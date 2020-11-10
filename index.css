@@ -10,14 +10,18 @@ h3 {
   text-align: center;
 }
 
-.botoes-interpolacao{
+.botoes-interpolacao {
   text-align: center;
 }
 
-.botoes-lineares{
+.botoes-lineares {
   text-align: center;
 }
 
-.gauss-lu{
+.gauss-lu {
   text-align: center;
+}
+
+#gauss-table {
+  margin-top: 22px;
 }
