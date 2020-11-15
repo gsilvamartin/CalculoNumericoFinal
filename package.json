@@ -16,7 +16,5 @@
     "url": "https://github.com/gsilvamartin/CalculoNumericoFinal/issues"
   },
   "homepage": "https://github.com/gsilvamartin/CalculoNumericoFinal#readme",
-  "dependencies": {
-    "@josh-brown/vector": "^3.4.0"
-  }
+  "dependencies": {}
 }

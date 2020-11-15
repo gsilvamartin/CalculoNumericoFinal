@@ -19,7 +19,7 @@
         <h3>Sistemas Lineares</h3>
         <br />
         <button class="btn btn-primary" onclick="selecionaFuncao(1)">Fatoração LU</button>
-        <button class="btn btn-primary">Gauss-Jacobi</button>
+        <button class="btn btn-primary" onclick="selecionaFuncao(2)">Gauss-Jacobi</button>
         <button class="btn btn-primary">Gauss-Seidel</button>
       </div>
       <br />
@@ -39,8 +39,22 @@
           <button class="btn btn-primary" onclick="gerarMatriz()">Gerar Matriz</button>
           <br>
           <div class="gauss-table" id="gauss-table"></div>
+          <br><br>
+          <div id="resultado-lu" hidden>
+            <div id='l-l'></div>
+            <div id='l-lu'></div>
+            <div id='l-p'></div>
+          </div>
         </div>
-      <div class="jacobi"></div>
+      <div class="jacobi" hidden>
+        <span>Selecione a dimensão da matriz: </span><br><br>
+        <input type="number" id="jacobi-dimension"></input>
+        <br><br>
+        <button class="btn btn-primary" onclick="gerarMatrizJacobi()">Gerar Matriz</button>
+        <br>
+        <div class="jacobi-table" id="jacobi-table"></div>
+        <br><br>
+      </div>
       <div class="gauss-seidel"></div>
       <div class="lagrange"></div>
       <div class="newton"></div>
@@ -49,5 +63,8 @@
 </html>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="math.js"></script>
 <script src="index.js"></script>
 <script src="gauss-lu.js"></script>
