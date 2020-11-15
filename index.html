@@ -20,7 +20,7 @@
         <br />
         <button class="btn btn-primary" onclick="selecionaFuncao(1)">Fatoração LU</button>
         <button class="btn btn-primary" onclick="selecionaFuncao(2)">Gauss-Jacobi</button>
-        <button class="btn btn-primary">Gauss-Seidel</button>
+        <button class="btn btn-primary" onclick="selecionaFuncao(3)">Gauss-Seidel</button>
       </div>
       <br />
       <div class="botoes-interpolacao">
@@ -47,17 +47,90 @@
           </div>
         </div>
       <div class="jacobi" hidden>
-        <span>Selecione a dimensão da matriz: </span><br><br>
+        <span>Epislon: </span><br>
+        <input type="number" id="epislon-jacobi"></input><br><br>
+        <span>Selecione a dimensão da matriz: </span><br>
         <input type="number" id="jacobi-dimension"></input>
         <br><br>
         <button class="btn btn-primary" onclick="gerarMatrizJacobi()">Gerar Matriz</button>
         <br>
         <div class="jacobi-table" id="jacobi-table"></div>
         <br><br>
+        <div id="resultado-jacobi" hidden></div>
       </div>
-      <div class="gauss-seidel"></div>
+      <div class="seidel" hidden>
+        <span>Epislon: </span><br>
+        <input type="number" id="epislon-seidel"></input><br><br>
+        <span>Selecione a dimensão da matriz: </span><br>
+        <input type="number" id="seidel-dimension"></input>
+        <br><br>
+        <button class="btn btn-primary" onclick="gerarMatrizSeidel()">Gerar Matriz</button>
+        <br>
+        <div class="seidel-table" id="seidel-table"></div>
+        <br><br>
+        <div id="resultado-seidel" hidden></div>
+      </div>
+      <div class="newton">
+        <div id="content">
+          <div class="inner">   
+            <div align="center">
+              <header style="font-size: 150%;">Método de Newton</header>
+              <div id="errormsg"></div>
+              <table class="input" align="center">
+                <thead>
+                  <tr>
+                    <div id="mathfield" style="width:50%;">x^2 - 5*x + 6</div>
+                    <div id="hidden" style="display:none;">x^2 - 5*x + 6</div>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>X₀: <input type="number" id="x0" value="1"></td>
+                    <td>Número Max. Iterações: <input type="number" id="maxiter" value="10"></td>
+                  </tr>
+                  <tr>
+                    <td>Erro: <input type="number" id="eps" value="1"></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td>Root = <label id="root"></label></td>
+                    <td></td>
+                  </tr>
+                </tfoot>
+              </table>
+              <button id="demo" onclick="x(mE.getValue()); clrtab(); newton(x0.value, eps.value);">Calculate</button>
+            </div>
+      
+            <br><br>
+            <div align="center"> Derivada = <span id="derv" style="font-weight:bold;"></span> </div>
+      
+            <table class="output" align="center" id="disp">
+              <thead>
+                <tr>
+                  <th>i</th>
+                  <th>Xi</th>
+                  <th>f(Xi)</th>
+                  <th>f'(Xi)</th>
+                  <th>Xi+1</th>
+                  <th>Erro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      
+        </div>
+      </div>
       <div class="lagrange"></div>
-      <div class="newton"></div>
     </div>
   </body>
 </html>
@@ -68,3 +141,5 @@
 <script src="math.js"></script>
 <script src="index.js"></script>
 <script src="gauss-lu.js"></script>
+<script src="gauss-jacobi.js"></script>
+<script src="gauss-seidel.js"></script>
