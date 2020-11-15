@@ -12,6 +12,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="assets-newton/css/main.css" />
+    <link rel="stylesheet" href="assets-newton/math/mathquill.css" />
+    <link rel="stylesheet" href="assets-newton/math/matheditor.css" />
   </head>
   <body>
     <div class="center-div" id="div-botoes">
@@ -26,7 +29,7 @@
       <div class="botoes-interpolacao">
         <h3>Interpolação Polinomial</h3>
         <br />
-        <button class="btn btn-primary">Newton</button>
+        <button class="btn btn-primary" onclick="selecionaFuncao(4)">Newton</button>
         <button class="btn btn-primary">Lagrange</button>
       </div>
     </div>
@@ -70,7 +73,7 @@
         <br><br>
         <div id="resultado-seidel" hidden></div>
       </div>
-      <div class="newton">
+      <div class="newton" hidden>
         <div id="content">
           <div class="inner">   
             <div align="center">
@@ -95,12 +98,12 @@
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td>Root = <label id="root"></label></td>
+                    <td>Raiz = <label id="root"></label></td>
                     <td></td>
                   </tr>
                 </tfoot>
               </table>
-              <button id="demo" onclick="x(mE.getValue()); clrtab(); newton(x0.value, eps.value);">Calculate</button>
+              <button id="demo" onclick="x(mE.getValue()); clrtab(); newton(x0.value, eps.value);">Calcular</button>
             </div>
       
             <br><br>
@@ -130,7 +133,9 @@
       
         </div>
       </div>
-      <div class="lagrange"></div>
+      <div class="lagrange">
+        
+      </div>
     </div>
   </body>
 </html>
@@ -143,3 +148,22 @@
 <script src="gauss-lu.js"></script>
 <script src="gauss-jacobi.js"></script>
 <script src="gauss-seidel.js"></script>
+<script src="assets-newton/js/jquery.min.js"></script>
+<script src="assets-newton/js/browser.min.js"></script>
+<script src="assets-newton/js/breakpoints.min.js"></script>
+<script src="assets-newton/js/util.js"></script>
+<script src="assets-newton/js/main.js"></script>
+<script src="assets-newton/js/math.js"></script>
+<script src="assets-newton/math/latex-to-js.js"></script>
+<script src="assets-newton/math/mathquill.js"></script>
+<script src="assets-newton/math/matheditor.js"></script>
+<script> 
+  var mE = new MathEditor('mathfield');
+
+  function x(x) {
+    var span = document.getElementById('hidden');
+    z = latex_to_js(x);
+    span.innerHTML = z;
+    return x;
+  }	
+</script>
