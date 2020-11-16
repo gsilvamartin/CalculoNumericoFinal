@@ -11,5 +11,8 @@ function selecionaFuncao(funcao) {
   } else if (funcao === 6) {
     $(".lagrange").show();
     $("#div-botoes").hide();
+  } else if (funcao === 5) {
+    $(".newton").show();
+    $("#div-botoes").hide();
   }
 }
