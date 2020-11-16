@@ -29,8 +29,8 @@
       <div class="botoes-interpolacao">
         <h3>Interpolação Polinomial</h3>
         <br />
-        <button class="btn btn-primary" onclick="selecionaFuncao(4)">Newton</button>
-        <button class="btn btn-primary">Lagrange</button>
+        <button class="btn btn-primary" onclick="selecionaFuncao(5)">Newton</button>
+        <button class="btn btn-primary" onclick="selecionaFuncao(6)">Lagrange</button>
       </div>
     </div>
 
@@ -40,7 +40,7 @@
           <input type="number" id="gauss-dimension"></input>
           <br><br>
           <button class="btn btn-primary" onclick="gerarMatriz()">Gerar Matriz</button>
-          <br>
+          <br><br>
           <div class="gauss-table" id="gauss-table"></div>
           <br><br>
           <div id="resultado-lu" hidden>
@@ -56,7 +56,7 @@
         <input type="number" id="jacobi-dimension"></input>
         <br><br>
         <button class="btn btn-primary" onclick="gerarMatrizJacobi()">Gerar Matriz</button>
-        <br>
+        <br><br>
         <div class="jacobi-table" id="jacobi-table"></div>
         <br><br>
         <div id="resultado-jacobi" hidden></div>
@@ -68,7 +68,7 @@
         <input type="number" id="seidel-dimension"></input>
         <br><br>
         <button class="btn btn-primary" onclick="gerarMatrizSeidel()">Gerar Matriz</button>
-        <br>
+        <br><br>
         <div class="seidel-table" id="seidel-table"></div>
         <br><br>
         <div id="resultado-seidel" hidden></div>
@@ -133,8 +133,19 @@
       
         </div>
       </div>
-      <div class="lagrange">
-        
+      <div class="lagrange" hidden>
+        <span>Valor a ser interpolado: </span><br>
+        <input type="number" id="valor-interpolado"></input><br><br>
+        <span>Selecione a dimensão da matriz: </span><br>
+        <input type="number" id="lagrange-dimension"></input>
+        <br><br>
+        <button class="btn btn-primary" onclick="gerarMatrizLagrange()">Gerar Matriz</button>
+        <br><br>
+        <div class="lagrange-table" id="lagrange-table"></div>
+        <br><br>
+        <button class='btn btn-primary' id='calcularLagrange' style="display: none;">Calcular</button>
+        <div id='equacao'></div>
+        <div id="lagrange-resultado"></div>
       </div>
     </div>
   </body>
@@ -144,8 +155,10 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="math.js"></script>
+<script src="katex.min.js"></script>
 <script src="index.js"></script>
 <script src="gauss-lu.js"></script>
+<script src="lagrange.js"></script>
 <script src="gauss-jacobi.js"></script>
 <script src="gauss-seidel.js"></script>
 <script src="assets-newton/js/jquery.min.js"></script>

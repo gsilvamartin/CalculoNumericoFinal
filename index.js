@@ -8,8 +8,8 @@ function selecionaFuncao(funcao) {
   } else if (funcao === 3) {
     $(".seidel").show();
     $("#div-botoes").hide();
-  } else if (funcao === 4) {
-    $(".newton").show();
+  } else if (funcao === 6) {
+    $(".lagrange").show();
     $("#div-botoes").hide();
   }
 }
