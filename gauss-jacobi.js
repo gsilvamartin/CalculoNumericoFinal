@@ -118,11 +118,11 @@ function EfetuaCalculosJacobi(matA, matB, epislon) {
       respostaFinal.push(
         `<br>Substituindo x da função de iteração x<sub>${
           index + 1
-        }</sub> de <i>${f}</i>. <br><br> Resultado: <b>${novaF} =  <i>${math.evaluate(
+        }</sub> de <i>${f}</i>. <br><br> Resultado: <b>${novaF} =  <i>${eval(
           novaF
         )}<i> </b><br>`
       );
-      novasSolucoes.push(math.evaluate(novaF));
+      novasSolucoes.push(eval(novaF));
     });
 
     respostaFinal.push(`<br>Novo vetor, calculos anteriores: ${novasSolucoes}<br>`);
@@ -130,8 +130,6 @@ function EfetuaCalculosJacobi(matA, matB, epislon) {
     diferenca = math.subtract(novasSolucoes, solucoesAntigas);
 
     diferencaModulo = diferenca.map((e) => {
-      return Math.abs(e);
-    });
 
     novasSolucoes_modulo = novasSolucoes.map((e) => {
       return Math.abs(e);
