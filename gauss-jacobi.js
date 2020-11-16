@@ -94,9 +94,7 @@ function EfetuaCalculosJacobi(matA, matB, epislon) {
     diagonal += 1;
   }
 
-  respostaFinal.push(
-    `<br><br>Função de Iteração:<br> <b>${iteracao}</b>`
-  );
+  respostaFinal.push(`<br><br>Função de Iteração:<br> <b>${iteracao}</b>`);
 
   solucoesAntigas = [];
   for (i = 0; i < b.length; i++) {
@@ -125,11 +123,15 @@ function EfetuaCalculosJacobi(matA, matB, epislon) {
       novasSolucoes.push(eval(novaF));
     });
 
-    respostaFinal.push(`<br>Novo vetor, calculos anteriores: ${novasSolucoes}<br>`);
+    respostaFinal.push(
+      `<br>Novo vetor, calculos anteriores: ${novasSolucoes}<br>`
+    );
 
     diferenca = math.subtract(novasSolucoes, solucoesAntigas);
 
     diferencaModulo = diferenca.map((e) => {
+      return Math.abs(e);
+    });
 
     novasSolucoes_modulo = novasSolucoes.map((e) => {
       return Math.abs(e);
@@ -142,7 +144,9 @@ function EfetuaCalculosJacobi(matA, matB, epislon) {
     solucoesAntigas = novasSolucoes;
   }
 
-  respostaFinal.push(`<br>Solução encontrada: <b>${solucoesAntigas}</b><br><br>`);
+  respostaFinal.push(
+    `<br>Solução encontrada: <b>${solucoesAntigas}</b><br><br>`
+  );
 
   $("#resultado-jacobi").append(respostaFinal);
   $("#resultado-jacobi").show();
