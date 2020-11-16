@@ -63,10 +63,10 @@ function calculaJacobi() {
   arrayB.shift();
   finalArray.shift();
 
-  EfetuaCalculos(finalArray, arrayB, epislon);
+  EfetuaCalculosJacobi(finalArray, arrayB, epislon);
 }
 
-function EfetuaCalculos(matA, matB, epislon) {
+function EfetuaCalculosJacobi(matA, matB, epislon) {
   a = matA;
   b = matB;
   respostaFinal = [];

@@ -59,10 +59,10 @@ function calculaGauss() {
 
   finalArray.shift();
 
-  EfetuaCalculos(finalArray, arrayB);
+  EfetuaCalculosLU(finalArray);
 }
 
-function EfetuaCalculos(matA) {
+function EfetuaCalculosLU(matA) {
   var resultado = math.lup(matA);
 
   var resultadoL = "";

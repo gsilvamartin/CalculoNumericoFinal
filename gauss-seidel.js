@@ -63,10 +63,10 @@ function gerarMatrizSeidel() {
     arrayB.shift();
     finalArray.shift();
   
-    EfetuaCalculos(finalArray, arrayB, epislon);
+    EfetuaCalculosSeidel(finalArray, arrayB, epislon);
   }
   
-  function EfetuaCalculos(matA, matB, epislon) {
+  function EfetuaCalculosSeidel(matA, matB, epislon) {
     a = matA;
     b = matB;
     respostaFinal = [];
